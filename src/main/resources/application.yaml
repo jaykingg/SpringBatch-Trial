@@ -1,9 +1,14 @@
 spring:
-  batch:
-    jdbc:
-      initialize-schema: always
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  jpa:
+    hibernate:
+      ddl-auto: create  # 테이블을 자동으로 생성 및 업데이트
+    show-sql: true  # 콘솔에 실행되는 SQL 출력
+  sql:
+    init:
+      mode: always
+      schema-locations: schema-h2.sql
